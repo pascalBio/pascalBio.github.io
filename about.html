@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.50">
+  <link rel="icon" type="image/x-icon" href="web.ico">
+  <title>Avrsxdcrown | Biography</title>
+  <link rel="stylesheet" href="css/styles_about.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="css2?family=Comfortaa:wght@300&family=Raleway:wght@200&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ajax/libs/font-awesome/6.0.0/css/all.min2.css">
+  <style>
+section {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 50px auto 20px;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.avatar {
+  position: relative;
+  margin: 0 auto; /* Center the avatar horizontally */
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+  .links {
+  margin-top: 20px;
+}
+    
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("back.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .links {
+      margin-top: 20px;
+    }
+    
+    .social-button {
+      display: inline-block;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 10px;
+      text-decoration: none;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    
+    .social-button:hover {
+      transform: scale(1.1);
+    }
+    
+    .telegram {
+      background-color: #0088cc;
+    }
+    
+    .telegram:hover {
+      background-color: #005580;
+    }
+
+        .author {
+      background-color: #00bfff;
+    }
+    
+    .author:hover {
+      background-color: #0080ff;
+    }
+    .vk {
+      background-color: #4c75a3;
+    }
+    
+    .vk:hover {
+      background-color: #376aa3;
+    }
+    
+    .spotify-link {
+      background-color: #1db954;
+    }
+    
+    .spotify-link:hover {
+      background-color: #1aa34a;
+    }
+    
+    .twitch-link {
+      background-color: #9147ff;
+    }
+    
+    .twitch-link:hover {
+      background-color: #7a3dd1;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+    }
+    
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      background-color: #555;
+      transition: background-color 0.3s ease;
+    }
+    
+    footer a:hover {
+      background-color: #777;
+    }
+    
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2c2c2c;
+      padding: 0.5em;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .menu label {
+      color: #fff;
+      transition: color 0.3s ease-out;
+      font-family: 'Comfortaa', cursive;
+    }
+
+    .menu label:hover {
+      color: #808080;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s ease-out;
+      font-family: 'Comfortaa', cursive;
+    }
+
+    .menu a:hover {
+      color: #808080;
+    }
+
+    .menu i {
+      margin-right: 5px;
+    }
+
+    .menu-list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    .menu-list.show {
+      transform: translateY(0);
+      opacity: 1;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #2c2c2c;
+      padding: 0.5em;
+      z-index: 3;
+    }
+
+    .menu-list li {
+      margin: 0 10px;
+    }
+
+    .menu-list li:first-child {
+      margin-left: 0;
+    }
+
+    .menu-toggle:checked + .menu .menu-list {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Затемнение фона */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Измените значение альфа-канала по вашему вкусу */
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s, visibility 0s linear 0.3s;
+      z-index: 1;
+    }
+
+    .menu-toggle:checked ~ .overlay {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    /* Animation for name */
+    .name-animation {
+      background: linear-gradient(to left, #87c, #421);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: name-gradient 5s infinite;
+    }
+
+    @keyframes name-gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <div class="menu">
+    <label for="menu-toggle">&#9776; Меню</label>
+    <ul class="menu-list">
+      <li><a href="/" onclick="showCustomMessage()"><i class="fas fa-home"></i> Главная</a></li>
+      <li><a href="/training"><i class="fas fa-project-diagram"></i> Training</a></li>
+      <li><a href="/donation"><i class="fas fa-donate"></i> Пожертвование</a></li>
+    </ul>
+  </div>
+
+  <section>
+    <div class="avatar">
+      <img src="komaru.gif" alt="Avatar" class="avatar-image">
+    </div>
+    <div class="bio">
+      <h1 class="name-animation">Avrsxdcrown</h1>
+    </div>
+  
+    <div class="links">
+      <div>
+        <a href="https://t.me/cfspamblockBot" class="social-button telegram"><i class="fab fa-telegram"></i> Telegram</a>
+        <a href="https://vk.com/avrsxdcrown" class="social-button vk"><i class="fab fa-vk"></i> VK</a>
+      </div>
+      <div>
+        <a href="https://open.spotify.com/playlist/0iqtDsnZitMNgrDg287KH5?si=d2wrfEHuTIuoFyWhGIQZGQ" class="social-button spotify-link"><i class="fab fa-spotify"></i> Spotify</a>
+        <a href="https://www.twitch.tv/koasdovich" class="social-button twitch-link"><i class="fab fa-twitch"></i> Twitch</a>
+      </div>
+      <div>
+        <a href="https://ghosvx.github.io/" class="social-button uknowncheatslink"><i class="fas fa-horseshoe"></i> Code Author</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="/script/mobile.js"></script>
+  <script>
+    const loader = document.querySelector('.loader');
+    const video = document.querySelector('.loader video');
+
+    // Check if the page is being loaded for the first time or being refreshed
+    if (performance.navigation.type === 1) {
+      // Page is being refreshed, hide the loader immediately
+      loader.classList.add('hide');
+    } else {
+      // Page is being loaded for the first time, show the loader until the video is loaded
+      window.addEventListener('load', function () {
+        loader.classList.remove('hide');
+      });
+
+      video.addEventListener('loadedmetadata', function () {
+        video.addEventListener('ended', function () {
+          loader.classList.add('hide');
+        });
+
+        video.addEventListener('error', function () {
+          loader.classList.add('hide');
+        });
+      });
+
+      window.addEventListener('beforeunload', function () {
+        video.pause();
+        video.currentTime = 0;
+      });
+    }
+  </script>
+</body>
+</html>

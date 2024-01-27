@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.50">
+  <link rel="icon" type="image/x-icon" href="web.ico">
+  <title>Avrsxdcrown | Training SAMP</title>
+  <link rel="stylesheet" href="css/styles_training.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="css2?family=Comfortaa:wght@300&family=Raleway:wght@200&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ajax/libs/font-awesome/6.0.0/css/all.min2.css">
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2c2c2c;
+      padding: 0.5em;
+      position: relative;
+      z-index: 2;
+    }
+
+    .menu label {
+      color: #fff;
+      transition: color 0.3s ease-out;
+      font-family: 'Comfortaa', cursive; /* Added Comfortaa font */
+    }
+
+    .menu label:hover {
+      color: #808080;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s ease-out;
+      font-family: 'Comfortaa', cursive; /* Added Comfortaa font */
+    }
+
+    .menu a:hover {
+      color: #808080;
+    }
+
+    .menu i {
+      margin-right: 5px;
+    }
+
+    .menu-list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    .menu-list.show {
+      transform: translateY(0);
+      opacity: 1;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #2c2c2c;
+      padding: 0.5em;
+      z-index: 3;
+    }
+
+    .menu-list li {
+      margin: 0 10px;
+    }
+
+    .menu-list li:first-child {
+      margin-left: 0;
+    }
+
+    .menu-toggle:checked + .menu .menu-list {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Затемнение фона */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Измените значение альфа-канала по вашему вкусу */
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s, visibility 0s linear 0.3s;
+      z-index: 1;
+    }
+
+    .menu-toggle:checked ~ .overlay {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .menu-list {
+        transform: translateY(0);
+        opacity: 1;
+        max-height: 200px;
+      }
+
+      .menu-list li {
+        text-align: center;
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+
+    .blurred-image {
+      max-width: 60%; /* Decreased the size of xd.png */
+    }
+
+  </style>
+</head>
+<body class="snowfall">
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <div class="menu">
+    <label for="menu-toggle">&#9776; Меню</label>
+    <ul class="menu-list">
+      <li><a href="/" onclick="showCustomMessage()"><i class="fas fa-home"></i> Главная</a></li>
+      <li><a href="/training"><i class="fas fa-project-diagram"></i> Training</a></li>
+      <li><a href="/donation"><i class="fas fa-donate"></i> Пожертвование</a></li>
+    </ul>
+  </div>
+
+  <div class="overlay"></div>
+
+  <section>
+      <div class="text-container">
+        <div class="color-changing-line"><h1>В разработке</h1></div>
+        <a href="https://t.me/cfspamblockBot" class="color-changing-line"><h2>[SAMP | TRAINING] Купить исходники ботов KrystallBOT | KrystallGPT (можно по отдельности)</h2></a>
+      </div>
+    </div>
+  </section>
+
+  <script src="/script/script.js"></script>
+  <script src="/script/mobile.js"></script>
+  <script>
+    function showCustomMessage() {
+      document.getElementById("msgBox").style.display = "block";
+    }
+
+    function closeMsgBox() {
+      document.getElementById("msgBox").style.display = "none";
+    }
+  </script>
+</body>
+</html>

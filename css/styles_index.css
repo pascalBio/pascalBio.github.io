@@ -98,6 +98,7 @@ footer {
   width: 100%;
 }
 
+/*
 .snowflake {
   position: absolute; 
   background-color: #fff;
@@ -115,6 +116,7 @@ footer {
 .snowfall {
   overflow: hidden;
 }
+*/
 
 body.snowfall .snowflake {
   animation: snowfall linear infinite;
